@@ -10,22 +10,6 @@ Este projeto demonstra um fluxo completo para **upload, listagem e download de a
 
 ---
 
-## Arquitetura
-
-           +-------------------------+
-           |     Terraform           |
-           |   (cria bucket S3)      |
-           +------------+------------+
-                        |
-                        v
-
-+-------------+ +-------+-------+ +------------------+
-| Cliente | --> | API Node.js | --> | LocalStack S3 |
-| (HTTP/REST) | | (Upload/URL) | | (Armazenamento) |
-+-------------+ +---------------+ +------------------+
-
----
-
 ## Provisionando Infra com Terraform
 
 - cd terraform
