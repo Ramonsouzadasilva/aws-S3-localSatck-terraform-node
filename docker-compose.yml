@@ -1,0 +1,17 @@
+services:
+  localstack:
+    container_name: 'localstack-s3'
+    image: localstack/localstack
+    ports:
+      - '127.0.0.1:4566:4566'
+      - '127.0.0.1:4510-4559:4510-4559'
+    environment:
+      - DEBUG=0
+      - DEFAULT_REGION=us-east-1
+      - SERVICES=s3
+    volumes:
+      - 'localstack-data-tutorial:/var/lib/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+
+volumes:
+  localstack-data-tutorial:
